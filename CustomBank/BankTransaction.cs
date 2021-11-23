@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vasilev13
+namespace CustomBank
 {
-    internal class BankTransaction
+    public class BankTransaction
     {
         public readonly double TransferMoney;
         public readonly DateTime DateTimeInfo;

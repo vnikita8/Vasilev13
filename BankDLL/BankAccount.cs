@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Vasilev13
+﻿namespace BankDLL
 {
     public enum AccountType { текущий, сберегательный }
     internal class BankAccount
@@ -56,19 +49,19 @@ namespace Vasilev13
 
         public bool TryTakeMoney(int count)
         {
-            if (count > balance | count < 0) {return false;}
-            else 
-            { 
-                balance -= count; 
-                Transactions.Enqueue(new BankTransaction(count)); 
-                return true; 
+            if (count > balance | count < 0) { return false; }
+            else
+            {
+                balance -= count;
+                Transactions.Enqueue(new BankTransaction(count));
+                return true;
             }
         }
 
-        private static void idPlus() {id++;}
-        public int GetBalance() {return balance;}
-        public AccountType GetType() {return type;}
-        public int GetNumber() {return accountNumber;}
+        private static void idPlus() { id++; }
+        public int GetBalance() { return balance; }
+        public AccountType GetType() { return type; }
+        public int GetNumber() { return accountNumber; }
 
         public static bool TryMoneyTransfer(ref BankAccount accountFrom, ref BankAccount accountTo, int money)
         {
@@ -82,7 +75,7 @@ namespace Vasilev13
                 else
                     return false;
             }
-            else 
+            else
                 return false;
         }
 

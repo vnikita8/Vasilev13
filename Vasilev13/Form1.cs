@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using CustomBank;
+using CustomBuild;
 
 namespace Vasilev13
 {
@@ -15,6 +10,17 @@ namespace Vasilev13
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            int NewAccointNumber = BankAccountCreator.CreateAccount(AccountType.текущий, 2000); //Dll кастомБанк
+            Build build = BuildCreator.CreateBuld(); //Dll кастомБуилд
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            /* Получаеца код */
         }
     }
 }
